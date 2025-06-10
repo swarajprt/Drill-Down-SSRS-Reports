@@ -1,0 +1,38 @@
+
+Objective:
+Developed an SSRS-based detailed table report to analyze Options IPV performance, incorporating Skew breakdowns, P&L, FO (Front Office) values, and Nymex volumes,
+enabling granular review by location and trading desk.
+__________________________________________________________________________________________________________________________________________________________________________________________
+Problem Statement:
+The IPV control team required a location-specific view of skew-based option valuation. Existing tools lacked clarity and flexibility, forcing users to shift through static spreadsheets. 
+This hampered efficiency during daily price validation and skew analysis across regional teams.
+___________________________________________________________________________________________________________________________________________________________________________________________
+
+🚀 Solution / Actions Taken:
+
+•	✅ SSRS Table Report: Created a table-based SSRS report with:
+o	Drill-down functionality for desk → instrument → skew
+o	Row groupings to logically separate each product and skew tier
+•	✅ Data Points Included:
+o	IPV vs FO P&L Delta
+o	Nymex Volume
+o	FO Prices
+o	IPV Curve Shift Indicators
+•	✅ Drill-Down & Row Grouping:
+o	Users could expand/collapse skew groups for quick access to summaries or deep dives
+o	Grouped by location (Houston, Singapore, London), skew type, and instrument
+•	✅ Dynamic Parameters:
+o	Filters for location, trading book, valuation date, and product type
+•	✅ Performance Tuning:
+o	Used indexed views and partitioned tables to ensure sub-second rendering for large datasets
+•	✅ Scheduling & Delivery:
+o	Auto-delivered to regional stakeholders via SSRS subscriptions
+________________________________________
+Tech Stack:
+•	Reporting Tool: SQL Server Reporting Services (SSRS)
+•	Database: SQL Server (views, joins, stored procedures)
+•	Data Source: IPV and FO pricing repositories
+•	Delivery: SSRS subscriptions (Excel, PDF)
+•	Security: AD-based row-level visibility by location/desk
+ 
+
